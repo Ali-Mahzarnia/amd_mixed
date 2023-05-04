@@ -144,8 +144,8 @@ results[which_Row, 5] = SE_AMD[winner_ind]
 results[which_Row, 6] = pval_adj_fdr[winner_ind]
 results[which_Row, 7] = Fvalue[winner_ind]
 results[which_Row, 8] = cohen[winner_ind]
-results[which_Row, 9] = winner_ind
-results[which_Row, 10] = paste(all_sig_ind,collapse=', ')
+results[which_Row, 9] = (winner_ind-1)
+results[which_Row, 10] = paste((all_sig_ind-1),collapse=', ')
 
 
 
