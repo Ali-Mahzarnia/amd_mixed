@@ -91,7 +91,7 @@ lm <- lmer( Len~AMD+ (1|ID)     ,data=msr_data_bdl2, REML = TRUE)
 }
 ##### lenght analysis
 
-if (lencon ==FALSE) { lm <- lmer( md~AMD+ (1|Subject)  + Point.ID   ,data=msr_data_bdl, REML = TRUE)}
+if (lencon ==FALSE) { lm <- lmer( fa~AMD+ (1|Subject)  + Point.ID   ,data=msr_data_bdl, REML = TRUE)}
 
 
 emm = emmeans::emmeans(lm , "AMD"  ) 
@@ -161,3 +161,7 @@ results[which_Row, 10] = paste(all_sig_ind,collapse=', ')
 results = resultold
 results = results[-c(1,2,3,4),]
 
+
+mypath = '/Users/ali/Desktop/Mar23/amd_mixed/bundle_analysis/new_cond_minmm_strmlines/'
+
+write.xlsx2(as.data.frame(results), paste0(mypath,'table4.xlsx') ,append = TRUE)
